@@ -2,7 +2,7 @@
 #
 #
 class gatekeeper {
-  unless $facts['gatekeeper'] {
+  if $facts['gatekeeper'] == false {
     exec { '/usr/sbin/spctl --master-enable':}
   }
 }
